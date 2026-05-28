@@ -1,0 +1,16 @@
+{
+  "name": "seven",
+  "version": "1.0.0",
+  "description": "from class 7",
+  "license": "ISC",
+  "author": "me",
+  "type": "commonjs",
+  "main": "seven.js",
+  "scripts": {
+    "start": "nodemon seven.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
