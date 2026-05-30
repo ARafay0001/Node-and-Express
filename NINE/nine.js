@@ -6,6 +6,16 @@ const express = require('express')
 
 const app = express()
 
+app.use((req, res, next) => {
+  console.log('came from first middle ware', req.url, req.method)
+  next()
+})
+
+app.use((req, res, next) => {
+
+  console.log('came from second middle ware', req.url, req.method)
+})
+
 
 
 
