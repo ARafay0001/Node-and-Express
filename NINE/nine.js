@@ -1,25 +1,27 @@
-//core module
-const http = require('http');
+
 
 //external module
 const express = require('express')
 
 const app = express()
 
-app.use((req, res, next) => {
+
+//sytaxt of app.use 
+//app.use('path', (req, res, next) => {})
+
+
+app.use('/', (req, res, next) => {
   console.log('came from first middle ware', req.url, req.method)
   next()
 })
 
-app.use((req, res, next) => {
+app.use('/next', (req, res, next) => {
 
   console.log('came from second middle ware', req.url, req.method)
+  res.send('<p>welcome expess</p>')
 })
 
 
-
-
-const server = http.createServer(app);
 
 // const server = http.createServer((req, res) => {
 //   res.setHeader('Content-Type', 'text/html');
@@ -27,6 +29,6 @@ const server = http.createServer(app);
 // });
 const PORT = 3000;
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
 console.log(`Server running on address http://localhost: ${PORT}`)
 });
