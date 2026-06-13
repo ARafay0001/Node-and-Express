@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express Home</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body >
+ <%- include('partials/header') %>
+  <!-- Header -->
+  <div class="bg-gray-100 min-h-screen flex flex-col items-center py-10">
+     <h1 class="text-4xl font-bold text-blue-600 mb-6">
+    WELCOME TO EXPRESS
+  </h1>
+
+  <!-- Add Home Button -->
+  <a 
+    href="/host/add-home"
+    class="bg-red-500 hover:bg-red-600 text-white font-semibold px-5 py-2 rounded-lg shadow-md transition"
+  >
+    ADD HOME
+  </a>
+
+  <!-- Spacing -->
+  <div class="mt-10 w-full max-w-md">
+
+    <h2 class="text-xl font-semibold text-gray-700 mb-4 text-center">
+      Registered Homes
+    </h2>
+
+    <!-- List -->
+    <ul class="space-y-3">
+
+      <% registeredhouseName.forEach(home => { console.log(home) %>
+
+        <li class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 hover:-translate-y-1">
+
+  <h2 class="text-2xl font-bold text-blue-600 mb-4">
+    🏠 <%= home.houseName %>
+  </h2>
+
+  <div class="space-y-2">
+
+    <p class="flex justify-between items-center">
+      <span class="font-semibold text-gray-600">
+        💰 Price
+      </span>
+
+      <span class="text-green-600 font-bold">
+        PKR <%= home.price %>
+      </span>
+    </p>
+
+    <p class="flex justify-between items-center">
+      <span class="font-semibold text-gray-600">
+        📍 Location
+      </span>
+
+      <span class="text-gray-800 font-medium">
+        <%= home.location %>
+      </span>
+    </p>
+    <p class="flex justify-between items-center">
+      <span class="font-semibold text-gray-600">
+        <a
+      href="/home/<%= home.id %>"
+      class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+      > 
+       View Home
+      </a>
+      </span>
+
+      
+    </p>
+
+  </div>
+
+</li>
+
+      <% }) %>
+
+    </ul>
+
+  </div>
+  </div>
+
+</body>
+</html>
