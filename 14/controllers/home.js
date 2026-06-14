@@ -1,4 +1,5 @@
 
+const { log } = require('console')
 const houseModule = require('../modules/home')
 const fs = require('fs')
 
@@ -22,3 +23,19 @@ exports.gohome = (req, res, next) => {
     )})
 }
   
+exports.homedetail = (req, res, next) => {
+  const homeid = req.params.id;
+
+  houseModule.findById(homeid, home => {
+    if (!home) {
+      console.log("home not found ");
+    } else {
+      res.render('homedetails', {
+        home: home,
+      }
+      )
+    }
+
+  })
+    
+}

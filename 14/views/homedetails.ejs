@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= home.houseName %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <%- include('partials/header') %>
+  <!-- Home Details -->
+  <main class="max-w-4xl mx-auto py-12 px-6">
+
+    <div class="bg-white rounded-2xl shadow-lg p-8">
+
+      <h2 class="text-4xl font-bold text-indigo-600 mb-6">
+        🏠 <%= home.houseName %>
+      </h2>
+
+      <div class="space-y-4">
+
+        <div class="flex justify-between border-b pb-3">
+          <span class="font-semibold text-gray-600">
+            Price
+          </span>
+
+          <span class="text-green-600 text-xl font-bold">
+            PKR <%= home.price %>
+          </span>
+        </div>
+
+        <div class="flex justify-between border-b pb-3">
+          <span class="font-semibold text-gray-600">
+            Location
+          </span>
+
+          <span class="text-gray-800 font-medium">
+            <%= home.location %>
+          </span>
+        </div>
+
+        <div class="flex justify-between border-b pb-3">
+          <span class="font-semibold text-gray-600">
+            ID
+          </span>
+
+          <span class="text-gray-800">
+            <%= home.id %>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="mt-8">
+        <a
+          href="/"
+          class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl transition"
+        >
+          ← Back to Home List
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

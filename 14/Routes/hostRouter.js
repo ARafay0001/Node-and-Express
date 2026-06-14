@@ -8,5 +8,6 @@ const home = require('../controllers/home')
 hostRouter.get('/add-home', home.addhome)
 
 hostRouter.post('/add-home', home.registered);
+hostRouter.get('/home/:id', home.homedetail);
 
 exports.hostRouter = hostRouter
