@@ -1,0 +1,1 @@
+const hostRouter = express.Router();
