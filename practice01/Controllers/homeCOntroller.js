@@ -1,14 +1,17 @@
 const express = require('express');
 const app = express();
 
-app.set('view engine', 'ejs')
-app.set('views', 'views')
 
+const data = []
+exports.homepage = (req, res, next) => {
+  console.log('rendering home');
+  res.render('home', {data} )
+  data.push(req.body)
+  console.log('pushing req.body into data', data);
 
-app.use(express.urlencoded({ extended: false }));
+};
 
-
-
-app.get('/', (req, res, next) => {
-  res.render('home')
-});
+exports.formpage = (req, res, next) => {
+  console.log('rendering form', );
+  res.render('form')
+};

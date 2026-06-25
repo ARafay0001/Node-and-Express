@@ -8,6 +8,12 @@
 <body>
   <button>
     <a href="/form">Add Home</a>
+
+    <ul>
+  <% data.forEach(detail => { %>
+    <li><%= detail.name %> - $<%= detail.price %></li>
+  <% }) %>
+</ul>
   </button>
 </body>
 </html>
